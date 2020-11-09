@@ -8,7 +8,7 @@
     tools:context=".RockPaperScissorsActivity">
 
     <TextView
-        android:id="@+id/human"
+        android:id="@+id/tv_humanChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -19,15 +19,15 @@
         android:textSize="36sp" />
 
     <ImageView
-        android:id="@+id/rock"
+        android:id="@+id/iv_HumanChoice"
         android:layout_width="209dp"
         android:layout_height="205dp"
         android:layout_gravity="center|center_horizontal"
         android:layout_marginBottom="30sp"
-        app:srcCompat="@drawable/s" />
+        app:srcCompat="@drawable/rock" />
 
     <TextView
-        android:id="@+id/computer"
+        android:id="@+id/tv_ComputerChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -36,14 +36,14 @@
         android:textSize="36sp" />
 
     <ImageView
-        android:id="@+id/paper"
+        android:id="@+id/iv_ComputerChoice"
         android:layout_width="209dp"
         android:layout_height="205dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/pa" />
+        app:srcCompat="@drawable/paper" />
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/tv_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5sp"
@@ -62,7 +62,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/scissors_b"
+            android:id="@+id/b_scissors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -71,7 +71,7 @@
             android:text="가위" />
 
         <Button
-            android:id="@+id/rock_b"
+            android:id="@+id/b_rock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -80,7 +80,7 @@
             android:text="바위" />
 
         <Button
-            android:id="@+id/paper_b"
+            android:id="@+id/b_paper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -13,11 +13,12 @@ import java.util.Random;
 
 public class RockPaperScissorsActivity extends AppCompatActivity {
 
-    Button rock_b, scissors_b, paper_b;
-    TextView score;
-    ImageView paper,rock;
+    Button b_rock, b_scissors, b_paper;
+    TextView tv_score;
+    ImageView iv_ComputerChoice, iv_HumanChoice;
 
-    int humanScore, computerScore = 0;
+    int HumanScore, ComputerScore = 0;
+
 
 
     @Override
@@ -25,40 +26,40 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rock_paper_scissors);
 
-        paper_b = (Button) findViewById(R.id.paper_b);
-        scissors_b = (Button) findViewById(R.id.scissors_b);
-        rock_b = (Button) findViewById(R.id.rock_b);
+        b_paper = (Button) findViewById(R.id.b_paper);
+        b_scissors = (Button) findViewById(R.id.b_scissors);
+        b_rock = (Button) findViewById(R.id.b_rock);
 
-        rock = (ImageView) findViewById(R.id.rock);
-        paper = (ImageView) findViewById(R.id.paper);
+        iv_ComputerChoice = (ImageView) findViewById(R.id.iv_ComputerChoice);
+        iv_HumanChoice = (ImageView) findViewById(R.id.iv_HumanChoice);
 
-        score = (TextView) findViewById(R.id.score);
+        tv_score = (TextView) findViewById(R.id.tv_score);
 
-        paper_b.setOnClickListener(new View.OnClickListener(){
+        b_paper.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                rock.setImageResource(R.drawable.pa);
-                play_turn("paper");
+            public void onClick(View view) {
+                iv_HumanChoice.setImageResource(R.drawable.paper);
 
             }
         });
 
-        scissors_b.setOnClickListener(new View.OnClickListener(){
+        b_rock.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                rock.setImageResource(R.drawable.s);
-                play_turn("scissors");
-            }
-        });
-
-        rock_b.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                rock.setImageResource(R.drawable.rock);
+            public void onClick(View view) {
+                iv_HumanChoice.setImageResource(R.drawable.rock);
                 play_turn("rock");
             }
         });
+
+        b_scissors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iv_HumanChoice.setImageResource(R.drawable.scissors);
+                play_turn("scissors");
+            }
+        });
     }
+
     public void play_turn(String player_choice){
         String computer_choice = "";
         Random r = new Random();
@@ -76,46 +77,46 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         }
 
         if(computer_choice == "rock"){
-            rock.setImageResource(R.drawable.rock);
+            iv_ComputerChoice.setImageResource(R.drawable.rock);
         }
         else if(computer_choice == "scissors"){
-            rock.setImageResource(R.drawable.s);
+            iv_ComputerChoice.setImageResource(R.drawable.scissors);
         }
         else if(computer_choice == "paper"){
-            rock.setImageResource(R.drawable.pa);
+            iv_ComputerChoice.setImageResource(R.drawable.paper);
         }
 
         if(computer_choice == player_choice){
-            System.out.println("Draw.   Nobody won.");
+            System.out.println("Draw.  Nobody won..");
         }
-        else if(player_choice == "rock" && computer_choice == "scissors"){
-            humanScore++;
+        else if(player_choice == "rock" &&  computer_choice == "scissors"){
+            HumanScore++;
             System.out.println("Rock crushes scissors. You win!!");
         }
         else if(player_choice == "rock" && computer_choice == "paper"){
-            computerScore++;
-            System.out.println("paper covers scissors. Computer wins!");
+            ComputerScore++;
+            System.out.println("Paper covers rock. Computer wins!!");
         }
         else if(player_choice == "scissors" && computer_choice == "rock"){
-            computerScore++;
+            ComputerScore++;
             System.out.println("Rock crushes scissors. Computer wins!");
         }
         else if(player_choice == "scissors" && computer_choice == "paper"){
-            humanScore++;
+            HumanScore++;
             System.out.println("Scissors cuts paper. You win!");
         }
         else if(player_choice == "paper" && computer_choice == "rock"){
-            humanScore++;
+            HumanScore++;
             System.out.println("Paper covers rock. You win!");
         }
         else if(player_choice == "paper" && computer_choice == "scissors"){
-            computerScore++;
+            ComputerScore++;
             System.out.println("Scissors cuts paper. Computer wins!");
         }
-        else System.out.println("Not sure");
-
-
+        else{
+            System.out.println("Not sure");
+        }
 
     }
-
 }
+
