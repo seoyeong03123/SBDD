@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class RandomNumberActivity extends AppCompatActivity {
 
 
@@ -19,7 +21,9 @@ public class RandomNumberActivity extends AppCompatActivity {
         Button btn_plus = findViewById(R.id.btn_plus);
         Button btn_minus = findViewById(R.id.btn_minus);
         TextView tv_counter = findViewById(R.id.tv_counter);
+        TextView output = findViewById(R.id.output);
         String string = tv_counter.getText().toString();
+
         int count = Integer.parseInt(string);
 
 
@@ -36,6 +40,10 @@ public class RandomNumberActivity extends AppCompatActivity {
 
             }
         });
+
+        Random rand = new Random();
+        output.setText(rand.nextInt(count));
+
 
     }
 }
