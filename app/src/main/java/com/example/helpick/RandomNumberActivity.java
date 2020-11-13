@@ -43,9 +43,9 @@ public class RandomNumberActivity extends AppCompatActivity {
             }
         });
 
-/*        Random rand = new Random();
-        output.setText(rand.nextInt(count));*/
-
+        Random random = new Random();
+        int rnum = random.nextInt(counter);
+        output.setText(rnum);
 
     }
 }
