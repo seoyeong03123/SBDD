@@ -1,5 +1,3 @@
-/*
-
 package com.example.helpick;
 
 import android.view.LayoutInflater;
@@ -19,15 +17,21 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>imp
     ArrayList<Item> items = new ArrayList<>();
     OnPickItemClickListener listener;
 
+    @Override
+    public void onItemClick(ViewHolder holder, View view, int position) {
+
+    }
+
     public interface OnItemClickListener{
-        void onItemClick(int position);
+        void onItemClick(ViewHolder holder, View v, int position);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv1;
         Button btn1, btn2;
+        private OnItemClickListener listener;
 
-        public ViewHolder(@NonNull View itemView, final OnPickItemClickListener listener) {
+        public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
 
@@ -77,10 +81,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>imp
     public Item getItem(int position){return items.get(position);}
     public void setItem(int position, Item item){items.set(position, item);}
 
-    @Override
-    public void onItemClick(ViewHolder holder, View view, int position) {
-
-    }
 
 
-}*/
+}
+
+interface OnPickItemClickListener{
+    public void onItemClick(ItemAdapter.ViewHolder holder, View view, int position);
+}

@@ -7,75 +7,94 @@
     tools:context=".DrawingLotsActivity">
 
     <LinearLayout
-        android:id="@+id/drawing_lots_people_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout_people"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="인원 수"
-            android:textSize="30sp"/>
+            android:text="인원 "
+            android:textSize="30sp"
+            />
 
         <Button
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="+"/>
+            android:layout_height="50dp"
+            android:text="-"
+            android:textSize="30sp"
+            android:id="@+id/people_minus"
+            />
 
         <TextView
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="30sp"/>
+            android:text="2"
+            android:textSize="30sp"
+            android:id="@+id/people_amount"
+            />
 
         <Button
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="-"/>
+            android:layout_height="50dp"
+            android:text="+"
+            android:textSize="30sp"
+            android:id="@+id/people_plus"
+            />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/drawing_lots_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/drawing_lots_people_num"
+        android:id="@+id/linearLayout_lose"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_people"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="20dp"
-        >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="인원 수"
-            android:textSize="30sp"/>
+            android:text="꽝 "
+            android:textSize="30sp"
+            />
 
         <Button
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="+"/>
+            android:layout_height="50dp"
+            android:text="-"
+            android:textSize="30sp"
+            android:id="@+id/lose_minus"
+            />
 
         <TextView
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="30sp"/>
+            android:text="1"
+            android:textSize="30sp"
+            android:id="@+id/lose_amount"
+            />
 
         <Button
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="-"/>
-
+            android:layout_height="50dp"
+            android:text="+"
+            android:textSize="30sp"
+            android:id="@+id/lose_plus"
+            />
 
     </LinearLayout>
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_lose"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="돌리기"
+        android:id="@+id/pick_submit"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".RockPaperScissorsActivity">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tv_humanChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:layout_marginBottom="10sp"
+        android:text="당신의 선택"
+        android:textColor="#090909"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_humanChoice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/HumanChoice"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_marginBottom="30sp"
+        app:srcCompat="@drawable/scissors" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/HumanChoice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tv_ComputerChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="컴퓨터의 선택"
+        android:textColor="#121111"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ComputerChoice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/ComputerChoice"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/paper" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/ComputerChoice"
+        android:layout_marginTop="30dp"
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
+        android:layout_marginLeft="5sp"
+        android:gravity="center"
+        android:text="점수 : 인간 0 컴퓨터 0"
+        android:textColor="#0C0C0C"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/score"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b_scissors"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10sp"
+            android:layout_marginLeft="10sp"
+            android:text="가위" />
+
+        <Button
+            android:id="@+id/b_rock"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10sp"
+            android:layout_marginLeft="10sp"
+            android:text="바위" />
+
+        <Button
+            android:id="@+id/b_paper"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10sp"
+            android:layout_marginLeft="10sp"
+            android:text="보" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
