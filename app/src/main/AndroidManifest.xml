@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Helpick">
-        <activity android:name=".DrawingLotsActivity">
+        <activity android:name=".DrawingLotsFinalResult"></activity>
+        <activity android:name=".DrawingLotsResult" />
+        <activity android:name=".RockPaperScissorsActivity" />
+        <activity android:name=".TurntableActivity" />
+        <activity android:name=".RandomNumberActivity" />
+        <activity android:name=".DrawingLotsActivity" />
+        <activity android:name=".SubActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

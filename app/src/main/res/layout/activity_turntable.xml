@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
+    <LinearLayout
+        android:id="@+id/text_container"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+            <EditText
+                android:id="@+id/edittext_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/edittext_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+            <EditText
+                android:id="@+id/edittext_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/edittext_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/edittext_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/edittext_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/btn_container"
+        app:layout_constraintTop_toBottomOf="@id/text_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="358dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
 
         <Button
             android:id="@+id/btnDrawRoulette6"
@@ -20,33 +80,37 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/ha"
+        app:layout_constraintTop_toBottomOf="@+id/btn_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/point" />
 
     <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@id/ha"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/layoutRoulette"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:orientation="vertical"
-        android:background="@drawable/background_turntable">
+        android:background="@drawable/background_rou">
 
     </RelativeLayout>
 
     <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="30dp"
         android:id="@+id/btnRotate"
         android:layout_width="342dp"
         android:layout_height="55dp"
         android:layout_centerInParent="true"
         android:text="룰렛 돌리기!" />
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="결과 : "
-        android:textSize="32sp"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

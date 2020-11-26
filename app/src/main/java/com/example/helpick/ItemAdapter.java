@@ -12,41 +12,35 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>implements OnPickItemClickListener {
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>implements OnItemClickListener {
 
     ArrayList<Item> items = new ArrayList<>();
-    OnPickItemClickListener listener;
+    OnItemClickListener listener;
 
-    @Override
-    public void onItemClick(ViewHolder holder, View view, int position) {
-
+    public ItemAdapter(OnItemClickListener onItemClickListener){
+        this.listener = onItemClickListener;
     }
 
     public interface OnItemClickListener{
-        void onItemClick(ViewHolder holder, View v, int position);
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener mlistener){
+        listener = mlistener;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv1;
-        Button btn1, btn2;
-        private OnItemClickListener listener;
 
-        public ViewHolder(@NonNull View itemView) {
-
+        public ViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
 
             tv1 = itemView.findViewById(R.id.item_name);
-            btn1 = itemView.findViewById(R.id.item_btn1);
-            btn2 = itemView.findViewById(R.id.item_btn2);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = getAdapterPosition();
-
-                    if (listener != null){
-                        listener.onItemClick(ViewHolder.this, v,position);
-                    }
+                    listener.onItemClick(getAdapterPosition());
                 }
             });
 
@@ -63,7 +57,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>imp
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.pick_item,parent,false);
-        return new ViewHolder(itemView);
+        ViewHolder vh = new ViewHolder(itemView, listener);
+        return vh;
     }
 
     @Override
@@ -81,10 +76,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>imp
     public Item getItem(int position){return items.get(position);}
     public void setItem(int position, Item item){items.set(position, item);}
 
+    @Override
+    public void onItemClick(int position) {
 
-
-}
-
-interface OnPickItemClickListener{
-    public void onItemClick(ItemAdapter.ViewHolder holder, View view, int position);
+    }
 }

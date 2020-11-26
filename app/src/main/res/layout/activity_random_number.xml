@@ -7,72 +7,92 @@
     tools:context=".RandomNumberActivity"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/rand_num_linear"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
+        android:background="@drawable/round_corner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="50dp"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btn_minus"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_width="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/rand_num_linear"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/minus"
-                android:textSize="16pt"/>
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btn_minus"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minus"
+                    android:gravity="center"
+                    android:textSize="16pt"/>
+
+                <TextView
+                    android:textColor="#fff"
+                    android:id="@+id/tv_counter"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="16pt"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                    app:layout_constraintStart_toEndOf="@+id/btn_minus"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plus"
+                    android:textSize="16pt"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <TextView
-                android:id="@+id/tv_counter"
-                android:layout_width="100dp"
+                android:id="@+id/output"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center"
                 android:text="00"
-                android:textSize="16pt"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_plus"
-                app:layout_constraintStart_toEndOf="@+id/btn_minus"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/btn_plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus"
-                android:textSize="16pt"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <TextView
-            android:id="@+id/output"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="00"
-            android:textSize="36pt"
-            android:gravity="center"
-            android:layout_marginTop="50dp"/>
+                android:textColor="#fff"
+                android:textSize="36pt"
+                android:gravity="center"
+                android:layout_marginTop="50dp"/>
         </LinearLayout>
 
-    <Button
-        app:layout_constraintTop_toBottomOf="@+id/rand_num_linear"
-        android:layout_marginTop="30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="wrap_content"
-        android:textSize="8pt"
-        android:layout_height="wrap_content"
-        android:text="@string/play_btn"/>
-
+        <Button
+            android:id="@+id/play_button"
+            app:layout_constraintTop_toBottomOf="@+id/rand_num_linear"
+            android:layout_marginTop="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:textSize="8pt"
+            android:layout_height="wrap_content"
+            android:text="@string/play_btn"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,9 +39,9 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HumanChoice.setImageResource(R.drawable.paper); //버튼 클릭시 이미지 교체
-                String message = play_turn("paper"); //
+                String message = play_turn("paper");
                 Toast.makeText(RockPaperScissorsActivity.this,message,Toast.LENGTH_SHORT).show();
-                score.setText("인간 : " + HumanScore + "  " +  "컴퓨터 : " + ComputerScore);
+                score.setText("인간 : " + HumanScore + "  " +  "컴퓨터 : " + ComputerScore); //가위바위보 대결 결과 출력
             }
         });
 
@@ -71,7 +71,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
         String computer_choice = "";
         Random r = new Random();
 
-        int computer_choice_number = r.nextInt(3);
+        int computer_choice_number = r.nextInt(3); //3까지 랜덤 숫자 생성
 
         if(computer_choice_number == 0){
             computer_choice = "rock";
@@ -83,7 +83,7 @@ public class RockPaperScissorsActivity extends AppCompatActivity {
             computer_choice = "paper";
         }
 
-        //computer_choice의 문자열을 받아와서 iv_ComputerChoice의 이미지를 바꿔주는 부분
+        //computer_choice의 문자열을 받아와서 ComputerChoice의 이미지를 바꿔주는 부분
         if(computer_choice == "rock"){
             ComputerChoice.setImageResource(R.drawable.rock);
         }
